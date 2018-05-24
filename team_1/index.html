@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>project 2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style> body, html {
+      height: 100%;
+      margin: 0;
+  }
+  
+  .bg {
+      /* The image used */
+      background-image: url("47247.jpg");
+  
+      /* Full height */
+      height: 100%; 
+  
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+<script>
+    var question = prompt("Камень, ножницы или бумага?", "Камень Ножницы Бумага");
+
+    var rndnubmer = Math.random();
+
+    if (rndnubmer < 0.34) {
+      rndnubmer = "Камень";
+    }
+    else if (rndnubmer <= 0.67) {
+      rndnubmer = "Ножницы";
+    }
+    else {
+      rndnubmer = "Бумага";
+    }
+    console.log("Компьютер: " + rndnubmer);
+
+    var choice1 = question;
+    var choice2 = rndnubmer;
+
+    var complete = function(choice1, choice2) {
+      if (choice1 === choice2) {
+          return "Никто не победил!";
+      }
+
+      else if (choice1 === "Камень") {
+        if (choice2 === "Ножницы") {
+          return "Камень победил!"
+        }
+        else {
+          return "Бумага победила!";
+        }
+      }
+
+      else if (choice1 === "Бумага") {
+        if (choice2 === "Камень") {
+          return "Бумага победила!"
+        }
+        else {
+          return "Ножницы победили!";
+        }
+      }
+
+      else if (choice1 === "Ножницы") {
+        if (choice2 === "Бумага") {
+          return "Ножницы победили!"
+        }
+        else {
+          return "Камень победил!";
+        }
+      }
+
+    }
+    alert(complete(choice1, choice2));
+
+  </script>
+
+</body>
+
+</html>
